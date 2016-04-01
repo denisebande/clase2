@@ -52,9 +52,9 @@ else
 			
 		</div>
 		<div class="CajaUno animated bounceInLeft">	
-			<img class="PiedraPapelTijera animated zoomInRight " src="../imagenes/piedra.jpg" ng-click="piedra()">
-			<img class="PiedraPapelTijera animated zoomInUp" src="../imagenes/papel.jpg" ng-click="papel()">
-			<img class="PiedraPapelTijera animated zoomInLeft"  src="../imagenes/tijera.jpg" ng-click="tijera()">		
+			<img class="PiedraPapelTijera animated zoomInRight " src="../imagenes/piedra.jpg" ng-click="eleccion('piedra')">
+			<img class="PiedraPapelTijera animated zoomInUp" src="../imagenes/papel.jpg" ng-click="eleccion('papel')">
+			<img class="PiedraPapelTijera animated zoomInLeft"  src="../imagenes/tijera.jpg" ng-click="eleccion('tijera')">		
 		</div>
 		<div class="CajaEnunciado animated bounceInLeft">
 			<h2>Enunciado:</h2>

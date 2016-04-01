@@ -8,7 +8,6 @@ anApp.controller('contPPT2', function($scope){
 	$scope.comenzar = function(){	
 
 	 	$scope.numeroSecreto =Math.floor( Math.random()*3)+1;
-		//alert(numeroSecreto);
 		switch($scope.numeroSecreto)
 		{
 			case 1:
@@ -22,20 +21,30 @@ anApp.controller('contPPT2', function($scope){
 				break;
 		}
 	};
-	$scope.papel = function(){
 
-		$scope.papel = function(){
-
-		$scope.eleccionMaquina ="papel";
-		$scope.comenzar();		
+	$scope.eleccion = function(eleccionUsuario){
+		$scope.comenzar();	
+		switch (eleccionUsuario)
+		{
+			case "papel":
+						$scope.ganar = "piedra"
+						break;
+			case "tijera":
+						$scope.ganar = "papel"
+						break;
+			case "piedra":
+						$scope.ganar = "tijera"
+						break;
+			default :	break;
+		}
+			
 		alert("la maquina selecciono: "+ $scope.eleccionMaquina);
-		$scope.eleccionHumano="papel";
-		if($scope.eleccionHumano== $scope.eleccionMaquina)
+		if(eleccionUsuario== $scope.eleccionMaquina)
 		{
 			alert("empate.");
 			$scope.empatadas++;		
 		}
-		else if($scope.eleccionMaquina=="piedra")
+		else if($scope.eleccionMaquina==$scope.ganar)
 		{
 			alert("vos ganastes.");
 			$scope.ganadas++;
@@ -45,7 +54,11 @@ anApp.controller('contPPT2', function($scope){
 			alert("ganó la Maquina.");
 			$scope.perdidas++;
 		}
-	};	
+	};
+
+/*
+
+	$scope.papel = function(){
 		$scope.comenzar();		
 		alert("la maquina selecciono: "+ $scope.eleccionMaquina);
 		$scope.eleccionHumano="papel";
@@ -107,6 +120,6 @@ anApp.controller('contPPT2', function($scope){
 			$scope.perdidas++;
 		}
 	};	
-
+*/
 
 	});
